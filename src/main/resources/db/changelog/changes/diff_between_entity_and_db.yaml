@@ -1,8 +1,6 @@
-
-
 databaseChangeLog:
 - changeSet:
-    id: 1656696709902-1
+    id: 1657014838903-1
     author: Toshiba (generated)
     changes:
     - createTable:
@@ -12,16 +10,13 @@ databaseChangeLog:
             constraints:
               nullable: false
               primaryKey: true
-              primaryKeyName: ProductsPK
+              primaryKeyName: ProductCategoryEntityPK
             name: id
             type: BIGINT
         - column:
             constraints:
               nullable: false
-            name: productName
+            name: categoryName
             type: VARCHAR(25)
-        - column:
-            name: productPrice
-            type: DOUBLE(5, 2)
-        tableName: Products
+        tableName: ProductCategoryEntity
 
