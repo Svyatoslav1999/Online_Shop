@@ -1,0 +1,26 @@
+
+
+databaseChangeLog:
+  - changeSet:
+      id: 1656696709902-1
+      author: Toshiba (generated)
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: ProductsPK
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: productName
+                  type: VARCHAR(25)
+              - column:
+                  name: productPrice
+                  type: DOUBLE(5, 2)
+            tableName: Products
