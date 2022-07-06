@@ -9,6 +9,7 @@ import javax.persistence.*;
 @Setter
 
 @Entity
+@Table(name = "ProductCategory")
 public class ProductCategoryEntity {
 
     @Id

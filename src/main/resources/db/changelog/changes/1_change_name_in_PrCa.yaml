@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1657093643882-1
+      author: Toshiba (generated)
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: ProductCategoryPK
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: categoryName
+                  type: VARCHAR(25)
+            tableName: ProductCategory
+  - changeSet:
+      id: 1657093643882-2
+      author: Toshiba (generated)
+      changes:
+        - dropTable:
+            tableName: productcategoryentity

@@ -1,22 +1,46 @@
+
+
+
 databaseChangeLog:
 - changeSet:
-    id: 1657014838903-1
+    id: 1657094548667-1
     author: Toshiba (generated)
     changes:
-    - createTable:
+    - addColumn:
         columns:
         - column:
-            autoIncrement: true
-            constraints:
-              nullable: false
-              primaryKey: true
-              primaryKeyName: ProductCategoryEntityPK
-            name: id
-            type: BIGINT
+            name: productCategory_id
+            type: bigint
+        tableName: Products
+- changeSet:
+    id: 1657094548667-2
+    author: Toshiba (generated)
+    changes:
+    - addColumn:
+        columns:
         - column:
-            constraints:
-              nullable: false
-            name: categoryName
-            type: VARCHAR(25)
-        tableName: ProductCategoryEntity
+            name: productIdentyfier
+            type: varchar(255)
+        tableName: Products
+- changeSet:
+    id: 1657094548667-3
+    author: Toshiba (generated)
+    changes:
+    - addUniqueConstraint:
+        columnNames: productIdentyfier
+        constraintName: UC_PRODUCTSPRODUCTIDENTYFIER_COL
+        tableName: Products
+- changeSet:
+    id: 1657094548667-4
+    author: Toshiba (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: productCategory_id
+        baseTableName: Products
+        constraintName: FKpd1o3qphppbeovccuof8g3e3g
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: ProductCategory
+        validate: true
 
