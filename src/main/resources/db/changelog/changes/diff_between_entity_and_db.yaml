@@ -1,46 +1,77 @@
-
-
-
 databaseChangeLog:
 - changeSet:
-    id: 1657094548667-1
+    id: 1657461274712-1
     author: Toshiba (generated)
     changes:
-    - addColumn:
+    - createTable:
         columns:
         - column:
-            name: productCategory_id
-            type: bigint
-        tableName: Products
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: product_categoryPK
+            name: id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: category_name
+            type: VARCHAR(25)
+        tableName: product_category
 - changeSet:
-    id: 1657094548667-2
+    id: 1657461274712-2
     author: Toshiba (generated)
     changes:
-    - addColumn:
+    - createTable:
         columns:
         - column:
-            name: productIdentyfier
-            type: varchar(255)
-        tableName: Products
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: productsPK
+            name: id
+            type: BIGINT
+        - column:
+            name: product_freshness
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: product_idetyfier
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: product_name
+            type: VARCHAR(25)
+        - column:
+            name: product_price
+            type: DOUBLE(5, 2)
+        - column:
+            name: product_category_id
+            type: BIGINT
+        tableName: products
 - changeSet:
-    id: 1657094548667-3
+    id: 1657461274712-3
     author: Toshiba (generated)
     changes:
     - addUniqueConstraint:
-        columnNames: productIdentyfier
-        constraintName: UC_PRODUCTSPRODUCTIDENTYFIER_COL
-        tableName: Products
+        columnNames: product_idetyfier
+        constraintName: UC_PRODUCTSPRODUCT_IDETYFIER_COL
+        tableName: products
 - changeSet:
-    id: 1657094548667-4
+    id: 1657461274712-4
     author: Toshiba (generated)
     changes:
     - addForeignKeyConstraint:
-        baseColumnNames: productCategory_id
-        baseTableName: Products
-        constraintName: FKpd1o3qphppbeovccuof8g3e3g
+        baseColumnNames: product_category_id
+        baseTableName: products
+        constraintName: FKb74tk5jq8jwurq34dks9agydq
         deferrable: false
         initiallyDeferred: false
         referencedColumnNames: id
-        referencedTableName: ProductCategory
+        referencedTableName: product_category
         validate: true
 
